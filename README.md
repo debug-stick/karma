@@ -1,2 +1,5 @@
 # karma
-A cuberite plugin that effects players by their deeds.
+A cuberite plugin that effects players by their deeds.  
+That mean you will get 'Sin' when doing something bad, such as damage forest or kill animals...  
+Inversely,you will get 'Merits' when doing something well,such as plant trees and kill mobs...  
+So,if you more 'Sin' than 'Merits',you may get punishment when you respawn or be going berserk, else get reword or get skill treatment.  
