@@ -30,24 +30,24 @@ end
 function MyOnKilled(a_Victim, a_TDI, a_DeathMessage)
 	if(cMonster:FamilyFromType(a_Victim:GetMonsterType()) == mfHostile) then
 		if(a_TDI.Attacker:IsPlayer()) then
-			Merits:PlayerDoMerits(10)
+			Merits:PlayerDoMerits(a_TDI.Attacker, 10)
 		end
 	end
 	if(cMonster:FamilyFromType(a_Victim:GetMonsterType()) == mfPassive) then
 		if(a_TDI.Attacker:IsPlayer()) then
-			Merits:PlayerDoMerits(-10)
+			Merits:PlayerDoMerits(a_TDI.Attacker, -10)
 		end
 	end
 end
 
 function MyOnPlayerBrokenBlock(a_Player, a_BlockX, a_BlockY, a_BlockZ, a_BlockFace, a_BlockType, a_BlockMeta)
 	if(a_BlockType == E_BLOCK_LOG or a_BlockType == E_BLOCK_NEW_LOG) then
-		Merits:PlayerDoMerits(-1)
+		Merits:PlayerDoMerits(a_Player, -1)
 	end
 end
 
 function MyOnPlayerPlacedBlock(a_Player, a_BlockX, a_BlockY, a_BlockZ, a_BlockFace, a_BlockType, a_BlockMeta)
 	if((a_BlockType == E_BLOCK_LOG or a_BlockType == E_BLOCK_NEW_LOG) and (a_BlockMeta <= E_META_SAPLING_DARK_OAK)) then
-		Merits:PlayerDoMerits(1)
+		Merits:PlayerDoMerits(a_Player, 1)
 	end
 end
